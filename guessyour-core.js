@@ -27,12 +27,12 @@ function analyzeGuess() {
     }
 
     if (userGuess < computerNumber) {
-        display("Guesshigherb**ch!")
+        display("Guess Higher")
         userInput()
     }
     
     if (userGuess > computerNumber) {
-        display("Guesslowerb**ch!")
+        display("Guess Lower")
         userInput()
     }
 }
@@ -41,5 +41,6 @@ function analyzeGuess() {
 
 module.exports = {
     gameStart: gameStart,
-    handleInput: handleInput
+    handleInput: handleInput,
+    analyzeGuess: analyzeGuess
 }

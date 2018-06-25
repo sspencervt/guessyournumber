@@ -6,10 +6,24 @@
         <script src='guessyour-core.js'></script>
     </head>
     <body>
-        <h1>Go right ahead...guess a number...bet you cant beat 5 guesses.</h1>
+        <h1>Guess</h1>
         
-        <textarea></textarea>
+        
+        <input name="textbox" id="textbox"/>
+        <input name="submitbutton" onclick="execute(document.getElementById('textbox').value)" type="button" value="execute" />
         <pre id='output'></pre>
 
+        <script>
+        function display(message) {
+            document.getElementById('output').textContent += '\n' + message;
+        }
+
+        function getGuess() {
+            let guess = document.getElementById('textbox')
+        }
+        gameStart();
+        </script>
+
+        
     </body>
 </html>
