@@ -1,3 +1,5 @@
+'use strict';
+
 let numberFind = require('./guessyour-core.js')
 /* node code */
 
@@ -16,5 +18,12 @@ global.exit = function() {
     process.exit()
 }
 
-numberFind.gameStart()
+global.usingJava = true;
+
+function javaIntro() {
+    display("I've thought of a number between 1-100\nGo!!!")
+    numberFind.gameStart()
+}
+
+javaIntro();
 

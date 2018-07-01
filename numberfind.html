@@ -1,29 +1,66 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Number Find</title>
-        <script>let module = {}; </script>
-        <script src='guessyour-core.js'></script>
-    </head>
-    <body>
-        <h1>Guess</h1>
-        
-        
-        <input name="textbox" id="textbox"/>
-        <input name="submitbutton" onclick="execute(document.getElementById('textbox').value)" type="button" value="execute" />
-        <pre id='output'></pre>
 
-        <script>
+<head>
+    <title>Number Find</title>
+    <script>
+        let module = {};
+        let global = {};
+    </script>
+    <script type="text/javascript" src="guessyour-core.js"></script>
+    <link type="text/css" rel="stylesheet" href="numberfind.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="top">
+    <h1>Guess Game!</h1>
+    <pre id="output"></pre>
+    </div>
+
+
+    <textarea placeholder="Input Guess Here" id="input"></textarea>
+<div id="button">
+    <button id="guess" onclick="userInput()">Guess</button>
+    <button id="restart" onclick="gameDone()">Restart</button>
+</div>
+    <script>
+        gameStart()
+        display("Let's play a game")
+        display("I pick a number and you try to guess it.")
+        display('The number is between 1 and 100')
+
+        function newGame() {
+            display("Good Job! Here we go again!")
+            display("I pick a number and you try to guess it.")
+            display('The number is between 1 and 100')
+            gameStart()
+        }
+
+
         function display(message) {
-            document.getElementById('output').textContent += '\n' + message;
+            document.getElementById("output").textContent += '\n' + message;
         }
 
-        function getGuess() {
-            let guess = document.getElementById('textbox')
+        function userInput() {
+            let input = document.getElementById("input").value;
+            handleInput(input);
         }
-        gameStart();
-        </script>
 
-        
-    </body>
+        function clear() {
+            document.getElementById("output").textContent = ''
+        }
+
+        function gameDone() {
+            clear()
+            newGame()
+            guessCounter = 0
+        }
+
+    </script>
+
+
+</body>
+
 </html>
