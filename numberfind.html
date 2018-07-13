@@ -20,23 +20,27 @@
     </div>
 
 
-    <textarea placeholder="Input Guess Here" id="input"></textarea>
+    <input type="input" placeholder="Input Guess Here" id="input" onclick="enterbutton()"></input>
 <div id="button">
     <button id="guess" onclick="userInput()">Guess</button>
     <button id="restart" onclick="gameDone()">Restart</button>
 </div>
     <script>
+
+function newGame() {
+            display("Good Job! Here we go again!")
+            display("I pick a number and you try to guess it.")
+            display('The number is between 1 and 100')
+            gameStart()
+
+        }
+
         gameStart()
         display("Let's play a game")
         display("I pick a number and you try to guess it.")
         display('The number is between 1 and 100')
 
-        function newGame() {
-            display("Good Job! Here we go again!")
-            display("I pick a number and you try to guess it.")
-            display('The number is between 1 and 100')
-            gameStart()
-        }
+        
 
 
         function display(message) {
@@ -44,18 +48,23 @@
         }
 
         function userInput() {
+            guessCounter++
+            console.log({guessCounter})
             let input = document.getElementById("input").value;
+            console.log(input + 'input1')
             handleInput(input);
-        }
+            console.log(input + 'input2')
+         }
 
         function clear() {
             document.getElementById("output").textContent = ''
         }
 
         function gameDone() {
+            guessCounter = 0
             clear()
             newGame()
-            guessCounter = 0
+            
         }
 
     </script>

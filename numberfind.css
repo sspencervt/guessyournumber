@@ -42,6 +42,18 @@ textarea {
     outline: none;
 }
 
+#input {
+    display: flex;
+    margin-left: 275px;
+    opacity: .7;
+    border: none;
+    height: 20px;
+    width: 200px;
+    font-size: 18px;
+    outline: none;
+    border-radius: 5px;
+}
+
 #button {
     margin-left: 275px;
     margin-top: 30px;
